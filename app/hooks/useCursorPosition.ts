@@ -24,7 +24,7 @@ export function useCursorPosition(): CursorPosition {
     });
 
     const lastPosition = useRef({ x: 0, y: 0, time: Date.now() });
-    const moveTimeout = useRef<NodeJS.Timeout>();
+    const moveTimeout = useRef<NodeJS.Timeout | null>(null);
 
     const handleMouseMove = useCallback((e: MouseEvent) => {
         const now = Date.now();
